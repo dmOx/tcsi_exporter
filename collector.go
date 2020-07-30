@@ -94,11 +94,11 @@ func (c PortfolioCollector) Collect(ch chan<- prometheus.Metric) {
 			labels := []string{
 				string(account.Type),            // account_type
 				string(position.InstrumentType), // instrument_type
-				position.FIGI,                   //figi
-				position.ISIN,                   //isin
-				position.Ticker,                 //ticker
-				position.Name,                   //human_name
-				string(position.AveragePositionPrice.Currency), //currency
+				position.FIGI,                   // figi
+				position.ISIN,                   // isin
+				position.Ticker,                 // ticker
+				position.Name,                   // human_name
+				string(position.AveragePositionPrice.Currency), // currency
 			}
 
 			ch <- prometheus.MustNewConstMetric(
